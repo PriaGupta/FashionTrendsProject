@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/FashionTrendsProject/static/css/main.a988abb3.css",
-    "main.js": "/FashionTrendsProject/static/js/main.ffc2bc7d.js",
+    "main.js": "/FashionTrendsProject/static/js/main.5b7fc637.js",
     "static/media/a1.png": "/FashionTrendsProject/static/media/a1.840879cf968560d352ff.png",
     "static/media/a4.png": "/FashionTrendsProject/static/media/a4.4f4905eeb6afe12e12f0.png",
     "static/media/a2.png": "/FashionTrendsProject/static/media/a2.fedfaade9515494e36e0.png",
@@ -9,10 +9,10 @@
     "static/media/llogo.png": "/FashionTrendsProject/static/media/llogo.8ee182c7e2b8119b634b.png",
     "index.html": "/FashionTrendsProject/index.html",
     "main.a988abb3.css.map": "/FashionTrendsProject/static/css/main.a988abb3.css.map",
-    "main.ffc2bc7d.js.map": "/FashionTrendsProject/static/js/main.ffc2bc7d.js.map"
+    "main.5b7fc637.js.map": "/FashionTrendsProject/static/js/main.5b7fc637.js.map"
   },
   "entrypoints": [
     "static/css/main.a988abb3.css",
-    "static/js/main.ffc2bc7d.js"
+    "static/js/main.5b7fc637.js"
   ]
 }
