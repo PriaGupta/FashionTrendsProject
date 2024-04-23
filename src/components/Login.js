@@ -24,7 +24,7 @@ const Login = () => {
         Cookie.set('pass',password)
 
    setTimeout(() => {
-    navigate('/')
+    navigate('/') 
    }, 2000);
     }
   return (

@@ -20,12 +20,10 @@ const Cart = () => {
     const handleDelete = (product) => {
         console.log('clicked')
             dispatch(deleteItem(product))
-            // setCartBtn("Add to Cart")
-        
+            // setCartBtn("Add to Cart")     
       }
 
 const navigate=useNavigate();
-
 
 const handleCheckOut=()=>{
 navigate('/checkout')
@@ -75,26 +73,24 @@ navigate('/checkout')
   return (
     <>
    
-
-
-<div class='container'>
-    <div class='row justify-content-center mt-5 mb-5'>
-        <div class='col-md-8'>
-            <div class="card">
-                <div class="card-header bg-dark p-3">
-                    <div class='d-flex justify-content-between align-items-center'>
-                        <h5 class='text-white m-0'>Cart Calculation {state.length > 0 ? `(${state.length})` : ""}</h5>
+<div className='container'>
+    <div className='row justify-content-center mt-5 mb-5'>
+        <div className='col-md-8'>
+            <div className="card">
+                <div className="card-header bg-dark p-3">
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <h5 className='text-white m-0'>Cart Calculation {state.length > 0 ? `(${state.length})` : ""}</h5>
                         {/* {state.length > 0 ? <button class='btn btn-danger btn-sm' onClick={emptyCart}>Empty Cart</button> : ""} */}
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div className="card-body p-0">
                     {state.length === 0 ? 
-                        <table class='table cart-table mb-0'>
+                        <table className='table cart-table mb-0'>
                             <tbody>
                                 <tr>
                                     <td colspan={6}>
-                                        <div class='cart-empty text-center'>
-                                            <i class='fa fa-shopping-cart'></i>
+                                        <div className='cart-empty text-center'>
+                                            <i className='fa fa-shopping-cart'></i>
                                             <p>Your Cart Is Empty</p>
                                         </div>
                                     </td>
@@ -102,8 +98,8 @@ navigate('/checkout')
                             </tbody>
                         </table> 
                         :
-                        <div class='table-responsive'>
-                            <table class='table cart-table mb-0'>
+                        <div className='table-responsive'>
+                            <table className='table cart-table mb-0'>
                                 <thead>
                                     <tr>
                                         <th>Action</th>
@@ -118,25 +114,25 @@ navigate('/checkout')
                                     {state.map((data, index) => (
                                         <tr key={index}>
                                             <td>
-                                                <button class='prdct-delete' onClick={() => handleDelete(data)}>
-                                                    <i class="fa-solid fa-trash"></i>
+                                                <button className='prdct-delete' onClick={() => handleDelete(data)}>
+                                                    <i className="fa-solid fa-trash"></i>
                                                 </button>
                                             </td>
                                             <td><img src={data.image} alt="Product" height="150px" width="150px" /></td>
                                             <td><p>{data.title}</p></td>
                                             <td>{data.price}</td>
                                             <td>
-                                                <div class="prdct-qty-container">
-                                                    <button class='prdct-qty-btn' type='button' onClick={data.quantity >= 1 ? () => handledec(data.id) : () => handleClose(data)}>
-                                                        <i class='fa fa-minus'></i>
+                                                <div className="prdct-qty-container">
+                                                    <button className='prdct-qty-btn' type='button' onClick={data.quantity >= 1 ? () => handledec(data.id) : () => handleClose(data)}>
+                                                        <i className='fa fa-minus'></i>
                                                     </button>
-                                                    <input type="text" class='qty-input-box' value={data.quantity} disabled />
-                                                    <button class='prdct-qty-btn' type='button' onClick={() => handleinc(data.id)}>
-                                                        <i class='fa fa-plus'></i>
+                                                    <input type="text" className='qty-input-box' value={data.quantity} disabled />
+                                                    <button className='prdct-qty-btn' type='button' onClick={() => handleinc(data.id)}>
+                                                        <i className='fa fa-plus'></i>
                                                     </button>
                                                 </div>
                                             </td>
-                                            <td class='text-right'>₹ {data.quantity * data.price}</td>
+                                            <td className='text-right'>₹ {data.quantity * data.price}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -144,12 +140,12 @@ navigate('/checkout')
                                     <tr>
                                         <th>&nbsp;</th>
                                         <th colspan={2}>&nbsp;</th>
-                                        <th>Items In Cart: <span class='text-danger'>{totalquantity}</span></th>
-                                        <th class='text-right'>Total Price: <span class='text-danger'>₹ {totalprice}</span></th>
-                                        <th class='text-right'><button class='btn btn-success' 
+                                        <th>Items In Cart: <span className='text-danger'>{totalquantity}</span></th>
+                                        <th className='text-right'>Total Price: <span className='text-danger'>₹ {totalprice}</span></th>
+                                        <th className='text-right'><button className='btn btn-success' 
                                         onClick={handleCheckOut} 
                                         type='button'>Checkout</button></th>
-                                       
+                    
                                     </tr>
                                 </tfoot>
                             </table>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import Cookie from 'js-cookie'
 import './style.css';
 const Checkout = () => {
     const state = useSelector((state) => state.addItem)
@@ -20,9 +21,27 @@ const Checkout = () => {
 
     const navigate=useNavigate();
 
-    const handlePay=()=>{
-    navigate('/pay')
-}
+    const handlePayClick = () => {
+        // Check if user is authenticated
+        const storedUsername = Cookie.get('name');
+        const storedPassword = Cookie.get('pass');
+         const isAuthenticated = storedUsername === 'admin' && storedPassword === 'Admin@789';
+
+        console.log('Username:', storedUsername);
+        console.log('Password:', storedPassword);
+        if (!isAuthenticated) {
+          // Redirect to login page with message
+          console.log('User not authenticated. Redirecting to login page.');
+          navigate('/log', { message: 'Please log in first' });
+        } else {
+          // Proceed with payment
+          console.log('Payment successful');
+        navigate('/pay')
+        }
+      };
+//     const handlePay=()=>{
+//     navigate('/pay')
+// }
 
     return (
         <>
@@ -137,9 +156,7 @@ const Checkout = () => {
                             </div>
 
                             <hr className="my-4" />
-
-                           
-                            <button className="w-100 btn btn-primary btn-lg" onClick={handlePay} type="submit">Continue to checkout</button>
+                            <button className="w-100 btn btn-primary btn-lg" onClick={handlePayClick} type="submit">Continue to Pay</button>
                         </form>
                     </div>
                 </div>
