@@ -1,0 +1,19 @@
+button.btn.btn-outline-primary.ms-auto {
+    border: 1px solid white;
+    color: white;
+}
+button.btn.btn-outline-primary.ms-auto:hover {
+    border: 1px solid white;
+    background-color: rgb(123, 168, 234);
+}
+
+a.btn.btn-outline-primary.ms-2 {
+    color: white;
+    border: 1px solid white;
+}
+a.btn.btn-outline-primary.ms-2:hover {
+
+    border: 1px solid white;
+    background-color: rgb(123, 168, 234);
+}
+
